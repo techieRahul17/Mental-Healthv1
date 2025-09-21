@@ -8,6 +8,7 @@ node_modules/
 dist/
 web-build/
 expo-env.d.ts
+.expo/
 
 # Native
 .kotlin/
@@ -45,4 +46,4 @@ app-example
 #md files
 PLAN.md
 design.md
-expochat.json
+expochat.json.expo/

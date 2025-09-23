@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { ThemeProvider, useTheme } from '@/contexts/theme-context';
+import { UserProvider } from '@/contexts/user-context';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -39,7 +40,6 @@ function RootLayoutContent() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-        <Stack.Screen name="breathing" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
     </NavigationThemeProvider>
@@ -49,7 +49,9 @@ function RootLayoutContent() {
 export default function RootLayout() {
   return (
     <ThemeProvider>
-      <RootLayoutContent />
+      <UserProvider>
+        <RootLayoutContent />
+      </UserProvider>
     </ThemeProvider>
   );
 }
